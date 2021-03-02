@@ -42,9 +42,14 @@ def start_game():
     while player_guess == "Wrong":
     
         guessed_number = input("What number do you guess?  ")
-        guessed_number = int(guessed_number)
         
-        
+        try:
+            guessed_number = int(guessed_number)
+            pass
+        except:
+            print("That is not a valid number. Please try inputting a number again")
+            continue
+            
         if guessed_number > answer:
             print("Your guess was {}".format(guessed_number))
             print("It's lower")
